@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// src/index.js
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'; // Your global styles (e.g., Tailwind or custom styles)
+import App from './App'; // Main component of your application
+import { BrowserRouter as Router } from 'react-router-dom'; // For routing
+
+// This is where you can wrap your app in any global context providers if needed (e.g., AuthProvider, etc.)
+
+ReactDOM.render(
+  <Router>
     <App />
-  </React.StrictMode>
+  </Router>,
+  document.getElementById('root') // The element where your app will be mounted
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
