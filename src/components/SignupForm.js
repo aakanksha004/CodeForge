@@ -50,7 +50,7 @@ const SignupForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
           />
         </div>
         <div>
@@ -61,7 +61,7 @@ const SignupForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
           />
         </div>
         <div>
@@ -72,7 +72,7 @@ const SignupForm = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md mb-10"
+            className="w-full p-2 border border-gray-300 rounded-md mb-10 focus:outline-none"
           />
         </div>
         <button type="submit" className="w-full bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 text-white p-2 rounded-md">Sign Up</button>
