@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 // Middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://codeforgeapp.onrender.com',
   methods: ['GET', 'POST'],
   
 }));
