@@ -13,7 +13,7 @@ const api = axios.create({
 //new function to check if a problem has a solution
 export const checkSolutionStatus = async (problemId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/solutions/${problemId}`);
+      const response = await axios.get(`https://codeforge-h7gg.onrender.com/api/solutions/${problemId}`);
       return response.data.solution !== null;
     } catch (error) {
       console.error('Error checking solution status:', error);
