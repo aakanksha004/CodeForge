@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getAllProblems,checkSolutionStatus } from '../api';
 import Header from './Header';
 import { Link } from 'react-router-dom';
-import backgroundImage from '../bg4.jpg';
+import backgroundImage from '../bg2.jpg';
 import { FaSearch, FaStar, FaRegStar, FaCheck, FaTimes, FaTags,FaSync } from 'react-icons/fa';
 import { IoAddCircleOutline } from "react-icons/io5";
+import WelcomeSection from './WelcomeSection';
 
 const Dashboard = () => {
   const [problems, setProblems] = useState([]);
@@ -177,7 +178,7 @@ const Dashboard = () => {
     <>
       <Header />
       <div 
-        className="min-h-screen text-white p-8"
+        className="min-h-screen text-white p-8 z-9"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
@@ -186,33 +187,64 @@ const Dashboard = () => {
       >
 
       {/* <div className="bg-gray-900 min-h-screen text-white p-8"> */}
-      
+      <WelcomeSection/>
       <div className="flex justify-center mb-5">
-      <Link to="/design-question">
-        <button className="relative group bg-gradient-to-r from-purple-500 via-indigo-500 to-indigo-800 text-white rounded-xl shadow-md p-4 text-xl font-semibold overflow-hidden">
-          <div className="absolute inset-0 w-0 bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 transition-all duration-500 ease-in group-hover:w-full" />
-          <span className="flex items-center gap-2 relative z-10">
-            <IoAddCircleOutline className="w-6 h-6" />
-            Design a Question
-          </span>
-        </button>
-      </Link>
-    </div>
+  
+       <Link to="/design-question">
+         <button className="relative group bg-gradient-to-r from-[#007bff] via-[#00d4ff] to-gray-800 text-white rounded-xl shadow-md p-4 text-xl font-semibold overflow-hidden">
+          <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#55a2f4] via-[#3394a8] to-cyan-400 transition-all duration-500 ease-out group-hover:w-full" />
+    <span className="flex items-center gap-2 relative z-10">
+             <IoAddCircleOutline className="w-6 h-6" />
+             Design a Question
+           </span>
+         </button>
+       </Link>
+     </div>
 
 
         {/* Search Bar and Filter */}
         <div className="mb-6 flex gap-4 items-center relative mt-8">
         
-          <select
-            value={selectedDifficulty}
-            onChange={handleDifficultyFilter}
-            className="bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 focus:outline-none text-white p-3 mr-2 rounded-3xl"
+        <div className="relative inline-block">
+      <div className="relative group overflow-hidden rounded-3xl ml-20">
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900" />
+        
+        {/* Hover gradient overlay */}
+        <div className="absolute inset-0 w-0 bg-gradient-to-r from-indigo-900 via-purple-600 to-indigo-700 transition-all duration-500 ease-out group-hover:w-full" />
+        
+        {/* Select element */}
+        <select
+          value={selectedDifficulty}
+          onChange={handleDifficultyFilter}
+          className="relative z-10 appearance-none bg-transparent text-white p-3 pr-8 w-full cursor-pointer focus:outline-none"
+        >
+          <option value="" className="bg-indigo-800">All Difficulties</option>
+          <option value="easy" className="bg-indigo-800">Easy</option>
+          <option value="medium" className="bg-indigo-800">Medium</option>
+          <option value="hard" className="bg-indigo-800">Hard</option>
+        </select>
+        
+        {/* Custom dropdown arrow */}
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <svg
+            className="w-4 h-4 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <option value="">All Difficulties</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+
           <button
   onClick={toggleTagFilter}
   className="relative group overflow-hidden text-white p-3 rounded-3xl flex items-center gap-2 bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900"

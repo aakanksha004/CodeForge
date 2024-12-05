@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../api'; // Assuming you've defined loginUser in your API calls
 import backgroundImage from '../bg5.jpg';
+import WelcomeSection from './WelcomeSection';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -32,7 +33,9 @@ const LoginForm = () => {
       backgroundPosition: 'center',
     }}
   >
+        <WelcomeSection/>
     <div className="container mx-auto mt-10 max-w-md bg-black p-14 rounded-3xl ">
+
       <h2 className="text-3xl font-bold text-center mb-6">Login</h2>
       {error && <p className="text-red-500 text-center">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -44,7 +47,8 @@ const LoginForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
+            placeholder='Enter your E-mail'
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none bg-gray-100"
           />
         </div>
         <div>
@@ -55,15 +59,17 @@ const LoginForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md mb-10 focus:outline-none"
+            placeholder='Enter your password'
+            className="w-full p-2 border border-gray-300 rounded-md mb-10 focus:outline-none bg-gray-100"
           />
         </div>
-        <button type="submit" className="w-full bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 hover: text-white p-2 rounded-md mt-8">Login</button>
+        <button type="submit" className="w-full bg-gradient-to-r from-[#007bff] via-[#00d4ff] to-[#00ffbc] hover: text-white p-2 rounded-md mt-8">Login</button>
       </form>
       <p className="mt-4 text-center">
         Don't have an account? <a href="/signup" className="text-blue-500">Sign up</a>
       </p>
     </div>
+   
     </div>
   );
 };

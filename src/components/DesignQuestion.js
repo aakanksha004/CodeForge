@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import backgroundImage from '../bg4.jpg';
+import backgroundImage from '../bg2.jpg';
 import { createProblem } from '../api';
 import BackButton from './BackButton';
 
@@ -111,8 +111,8 @@ const DesignQuestion = () => {
         }}
       >
         <BackButton className="z-10"/>
-        <div className="max-w-2xl mx-auto p-5 bg-gray-900">
-          <h2 className="text-2xl font-semibold mb-5">Design a Question</h2>
+        <div className="max-w-2xl mx-auto p-5 bg-gradient-to-r from-[#01152c] via-[#071e24] to-[#060e0c]">
+          <h2 className="text-2xl  mb-5 " style={{fontFamily:'Potta One'}}>DESIGN A QUESTION </h2>
           <form onSubmit={handleSubmit} className="space-y-4 text-white">
             <input
               type="text"
@@ -120,7 +120,7 @@ const DesignQuestion = () => {
               placeholder="Title"
               value={formData.title}
               onChange={handleChange}
-              className="w-full p-3 border-none rounded bg-gray-700 focus:outline-none"
+              className="w-full p-3 border-none rounded bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none"
               required
             />
             <textarea
@@ -128,7 +128,7 @@ const DesignQuestion = () => {
               placeholder="Description"
               value={formData.description}
               onChange={handleChange}
-              className="w-full p-3 border-none rounded bg-gray-700 focus:outline-none"
+              className="w-full p-3 border-none rounded bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none"
               required
             />
             <textarea
@@ -136,7 +136,7 @@ const DesignQuestion = () => {
               placeholder="Input"
               value={formData.input}
               onChange={handleChange}
-              className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+              className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
               required
             />
             <textarea
@@ -144,7 +144,7 @@ const DesignQuestion = () => {
               placeholder="Output"
               value={formData.output}
               onChange={handleChange}
-              className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+              className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
               required
             />
             <input
@@ -153,7 +153,7 @@ const DesignQuestion = () => {
               placeholder="Constraints"
               value={formData.constraints}
               onChange={handleChange}
-              className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+              className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
               required
             />
             <input
@@ -162,13 +162,13 @@ const DesignQuestion = () => {
               placeholder="Tags (comma separated)"
               value={formData.tags}
               onChange={handleChange}
-              className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+              className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
             />
             <select
               name="difficulty"
               value={formData.difficulty}
               onChange={handleChange}
-              className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+              className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
             >
               <option value="Easy">Easy</option>
               <option value="Medium">Medium</option>
@@ -185,7 +185,7 @@ const DesignQuestion = () => {
                     placeholder={`Input for Test Case ${index + 1}`}
                     value={testCase.input}
                     onChange={(e) => handleTestCaseChange(index, e)}
-                    className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+                    className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
                     required
                   />
                   <input
@@ -194,7 +194,7 @@ const DesignQuestion = () => {
                     placeholder={`Expected Output for Test Case ${index + 1}`}
                     value={testCase.expectedOutput}
                     onChange={(e) => handleTestCaseChange(index, e)}
-                    className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+                    className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
                     required
                   />
                 </div>
@@ -202,7 +202,7 @@ const DesignQuestion = () => {
               <button
                 type="button"
                 onClick={addTestCase}
-                className="bg-green-500 text-white p-2 rounded mt-3"
+                className="bg-gradient-to-r from-[#47955e] via-[#298f55] to-[#037f5e] text-white p-2 rounded mt-3"
               >
                 + Add Test Case
               </button>
@@ -224,7 +224,7 @@ const DesignQuestion = () => {
                     },
                   }))
                 }
-                className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded"
+                className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded"
               />
               <input
                 type="text"
@@ -240,13 +240,13 @@ const DesignQuestion = () => {
                     },
                   }))
                 }
-                className="w-full p-3 border-none bg-gray-700 focus:outline-none rounded mt-2"
+                className="w-full p-3 border-none bg-gradient-to-r from-[#011d3a] via-[#0b2328] to-[#011d16] focus:outline-none rounded mt-2"
               />
             </div>
 
             <button
               type="submit"
-              className="bg-blue-700 text-white p-3 rounded-lg w-full"
+              className="bg-gradient-to-r from-[#007bff] via-[#00d4ff] to-[#008e68] text-white p-3 rounded-lg w-full"
             >
               Submit Problem
             </button>

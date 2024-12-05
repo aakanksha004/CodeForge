@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../api'; // Assuming you've defined registerUser in your API calls
 import backgroundImage from '../bg5.jpg';
+import WelcomeSection from './WelcomeSection';
 
 
 const SignupForm = () => {
@@ -38,6 +39,7 @@ const SignupForm = () => {
       backgroundPosition: 'center',
     }}
   >
+    <WelcomeSection/>
     <div className="container mx-auto mt-10 max-w-md bg-black p-14">
       <h2 className="text-3xl font-bold text-center mb-6">Sign Up</h2>
       {error && <p className="text-red-500 text-center">{error}</p>}
@@ -50,7 +52,8 @@ const SignupForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
+            placeholder='Enter your email'
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none bg-gray-100"
           />
         </div>
         <div>
@@ -61,7 +64,8 @@ const SignupForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
+            placeholder='Enter password'
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none bg-gray-100"
           />
         </div>
         <div>
@@ -69,13 +73,14 @@ const SignupForm = () => {
           <input
             type="password"
             id="confirmPassword"
+            placeholder='Enter Password again'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full p-2 border border-gray-300 rounded-md mb-10 focus:outline-none"
+            className="w-full p-2 border border-gray-300 rounded-md mb-10 focus:outline-none bg-gray-100"
           />
         </div>
-        <button type="submit" className="w-full bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 text-white p-2 rounded-md">Sign Up</button>
+        <button type="submit" className="w-full bg-gradient-to-r from-[#007bff] via-[#00d4ff] to-[#00ffbc] text-white p-2 rounded-md">Sign Up</button>
       </form>
       <p className="mt-4 text-center">
         Already have an account? <a href="/login" className="text-blue-500">Login</a>

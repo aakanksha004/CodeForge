@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getProblemById } from '../api';
 import CodeEditor from './CodeEditor';
+import { ArrowBack } from '@mui/icons-material';
 
 const ProblemDetails = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const ProblemDetails = () => {
   const [problem, setProblem] = useState(null);
   const [loading, setLoading] = useState(true);
   
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchProblem = async () => {
       try {
@@ -59,7 +60,18 @@ const ProblemDetails = () => {
           </div>
 
           <div className="space-y-6">
+            <div className='flex gap-2'>
+          <button
+        onClick={() => navigate('/')}
+        className="relative group overflow-hidden text-white p-2 rounded-3xl flex items-center gap-2 bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900"
+      >
+        <div className="absolute inset-0 w-0 bg-gradient-to-r from-indigo-900 via-purple-600 to-indigo-700 transition-all duration-500 ease-out group-hover:w-full" />
+        <span className="flex items-center gap-2 relative z-10">
+          <ArrowBack className="w-4 h-4" />
+        </span>
+      </button>
             <h2 className="text-3xl font-bold">{problem.title}</h2>
+            </div>
             <p className="text-gray-300">{problem.description}</p>
 
             <div>
