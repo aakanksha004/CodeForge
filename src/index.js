@@ -1,5 +1,3 @@
-// src/index.js
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'; // Your global styles (e.g., Tailwind or custom styles)
@@ -14,4 +12,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root') // The element where your app will be mounted
 );
-

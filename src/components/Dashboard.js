@@ -208,7 +208,7 @@ const Dashboard = () => {
         <div className="relative inline-block">
       <div className="relative group overflow-hidden rounded-3xl ml-20">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-indigo-500 to-indigo-600" />
         
         {/* Hover gradient overlay */}
         <div className="absolute inset-0 w-0 bg-gradient-to-r from-indigo-900 via-purple-600 to-indigo-700 transition-all duration-500 ease-out group-hover:w-full" />
