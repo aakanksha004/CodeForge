@@ -49,7 +49,7 @@ const CodeEditor = ({ problemId, testCases }) => {
     setIsCompiling(true);
     
     try {
-      const response = await axios.post('http://localhost:5000/api/execute-code', {
+      const response = await axios.post('https://codeforgeapp.onrender.com/api/execute-code', {
         code,
         language: language.toLowerCase(),
         stdin: stdin,
@@ -73,7 +73,7 @@ const CodeEditor = ({ problemId, testCases }) => {
     
     try {
       // First, run the tests
-      const testResponse = await axios.post('http://localhost:5000/api/execute-code', {
+      const testResponse = await axios.post('https://codeforgeapp.onrender.com//api/execute-code', {
         code,
         language: language.toLowerCase(),
         stdin: stdin,
