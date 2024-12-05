@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-gray-800 via-gray-800 to-neutral-900 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold ml-5">CodeForge</h1>
+        <h1 className="text-2xl font-bold ml-5" style={{fontFamily:'Potta One'}}>CodeForge</h1>
         <nav>
           <ul className="flex space-x-4 mr-20 gap-4">
             <li>
