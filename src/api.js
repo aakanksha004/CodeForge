@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Base Axios instance for API calls
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://codeforge-h7gg.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
